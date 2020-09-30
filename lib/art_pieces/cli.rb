@@ -18,12 +18,16 @@ class ArtPieces::CLI
   end
   
   def get_user_art_piece
-    chosen_art_piece = gets.strip
-    #if valid_input(chosen_art_piece,@art_pieces)
-    #end
+    chosen_art_piece = gets.strip.to_i
+   show_details_for(chosen_art_piece) if valid_input(chosen_art_piece, @art_pieces)
   end
   
   def valid_input(input, data)
     input.to_i <= data.length && input.to_i > 0
+  end
+  
+  def show_details_for(chosen_art_piece)
+    art_piece = @art_pieces[chosen_art_piece - 1]
+    puts "Here is some information for #{art_piece}"
   end
 end

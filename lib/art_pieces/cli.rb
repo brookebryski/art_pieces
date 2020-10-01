@@ -7,13 +7,13 @@ class ArtPieces::CLI
   end
   
   def get_art_pieces
-    @art_pieces = ['Mona Lisa by Leonardo da Vinci', 'Mona Lisa by Leonardo da Vinci']
+    @art_pieces = ArtPieces::ArtPiece.all
   end
   
   def list_art_pieces
     puts "Choose a piece of art to learn more about."
     @art_pieces.each.with_index(1) do |art_piece, index| 
-    puts "#{index}. #{art_piece}"
+    puts "#{index}. #{art_piece.name}"
     end
   end
   

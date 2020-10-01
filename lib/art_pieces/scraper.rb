@@ -1,0 +1,4 @@
+class ArtPieces::Scraper
+  
+  
+end

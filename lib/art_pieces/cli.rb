@@ -7,27 +7,27 @@ class ArtPieces::CLI
   end
   
   def get_art_pieces
-    @art_pieces = ArtPieces::ArtPiece.all
+    @paintings = ArtPieces::Painting.all
   end
   
   def list_art_pieces
     puts "Choose a piece of art to learn more about."
-    @art_pieces.each.with_index(1) do |art_piece, index| 
-    puts "#{index}. #{art_piece.name}"
+    @paintings.each.with_index(1) do |painting, index| 
+    puts "#{index}. #{painting.name}"
     end
   end
   
   def get_user_art_piece
-    chosen_art_piece = gets.strip.to_i
-   show_details_for(chosen_art_piece) if valid_input(chosen_art_piece, @art_pieces)
+    chosen_painting = gets.strip.to_i
+   show_details_for(chosen_painting) if valid_input(chosen_painting, @paintings)
   end
   
   def valid_input(input, data)
     input.to_i <= data.length && input.to_i > 0
   end
   
-  def show_details_for(chosen_art_piece)
-    art_piece = @art_pieces[chosen_art_piece - 1]
-    puts "Here is some information for #{art_piece}"
+  def show_details_for(chosen_painting)
+    painting = @paintings[chosen_painting - 1]
+    puts "Here is some information for #{painting}"
   end
 end

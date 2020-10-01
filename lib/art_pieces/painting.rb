@@ -1,4 +1,4 @@
-class ArtPieces::ArtPiece
+class ArtPieces::Painting
   @@all = []
   attr_accessor :name
   
@@ -8,6 +8,7 @@ class ArtPieces::ArtPiece
   end
   
   def self.all
+    ArtPieces::Scraper.scrape_paintings if @@all.empty?
     @@all
   end
   

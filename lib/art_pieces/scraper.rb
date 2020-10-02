@@ -7,6 +7,11 @@ class ArtPieces::Scraper
  paintings.each do |p|
   name = p.text
   ArtPieces::Painting.new(name)
+    end
   end
+  
+  def self.scrape_details(painting)
+    ArtPieces::Detail.new("details", painting)
+    ArtPieces::Detail.new("details", painting)
   end
 end

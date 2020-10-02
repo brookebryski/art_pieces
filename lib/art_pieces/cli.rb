@@ -36,12 +36,12 @@ class ArtPieces::CLI
     painting = @paintings[chosen_painting - 1]
     painting.get_details
     puts "Here is some information for #{painting.name}"
-    painting.details.each.with_index(1) do |detail, idx|
-      puts "#{idx}. #{detail}"
+    painting.details.each_with_index do |detail|
+      puts "#{detail}"
     end
     get_user_art_piece
   end
-  
+ 
   def user_status
     puts "All finished? Type 'exit' or press any key to learn about more pieces."
     @input = gets.strip
@@ -50,4 +50,5 @@ class ArtPieces::CLI
   def goodbye
     puts "See you next time!"
   end
- end
+end
+

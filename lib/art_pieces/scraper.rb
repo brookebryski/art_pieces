@@ -18,21 +18,13 @@ class ArtPieces::Scraper
     
     details = doc.css("body p")
     
-    details.each do |p|
-      description = p.text.strip
+   details.each do |p|
+     description = p.text.strip
       painting.details << description
    end
   end
- #def self.scrape_details(painting)
-    #doc = Nokogiri::HTML(open("https://historylists.org/art/20-of-the-world%E2%80%99s-most-famous-art-pieces.html"))
-    
-   #  details = doc.css("body p")
-  
- #details.each do |d|
-#  description = d.text
-#  ArtPieces::Detail.new(description)
-#    end
-#  end
+ 
+
   
 end
 

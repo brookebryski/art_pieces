@@ -15,3 +15,13 @@ class ArtPieces::Scraper
     ArtPieces::Detail.new("details", painting)
   end
 end
+
+=begin
+scrape details
+
+paintings = doc.css("body p")
+
+paintings.each do |p|
+  puts p.text
+end
+=end

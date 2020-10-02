@@ -1,4 +1,5 @@
 class ArtPieces::CLI 
+  
   def call
     puts "\nWelcome to your art lesson!\n"
     @input = ""
@@ -6,6 +7,7 @@ class ArtPieces::CLI
     get_art_pieces
     list_art_pieces
     get_user_art_piece
+    user_status
   end
   goodbye
   end
@@ -37,7 +39,7 @@ class ArtPieces::CLI
     painting.details.each.with_index(1) do |detail, idx|
       puts "#{idx}. #{detail}"
     end
-    get_user_art_piece(painting)
+    get_user_art_piece
   end
   
   def user_status

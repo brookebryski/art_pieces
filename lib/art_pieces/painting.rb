@@ -1,6 +1,6 @@
 class ArtPieces::Painting
-  attr_accessor :name
-  attr_writer :details
+  attr_accessor :name, :details
+
   @@all = []
 
   def initialize(name)
@@ -10,13 +10,12 @@ class ArtPieces::Painting
   end
   
   def self.all
-    ArtPieces::Scraper.scrape_paintings if @@all.empty?
+    ArtPieces::Scraper.scrape_paintings(self) if @@all.empty?
     @@all
   end
   
-  def details
-ArtPieces::Scraper.scrape_details(self) if @details.empty?
-    @details
+  def get_details
+    ArtPieces::Scraper.scrape_details(self) if @details.empty?
   end
   
   def save

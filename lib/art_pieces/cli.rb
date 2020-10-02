@@ -28,7 +28,10 @@ class ArtPieces::CLI
   
   def show_details_for(chosen_painting)
     painting = @paintings[chosen_painting - 1]
-    details = painting.details
+    painting.get_details
     puts "Here is some information for #{painting.name}"
+    painting.details.each.with_index(1) do |detail, idx|
+      puts "#{idx}. #{detail}"
+    end
   end
 end

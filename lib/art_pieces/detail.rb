@@ -1,11 +1,10 @@
 class ArtPieces::Detail
-  attr_accessor :name, :painting, :url
+  attr_accessor :name, :painting
   @@all = []
 
-  def initialize(name, painting)
+  def initialize(name)
     @name = name
     @painting = painting
-    @url = url
     add_to_painting
     save
   end

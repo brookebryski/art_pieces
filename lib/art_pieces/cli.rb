@@ -37,6 +37,7 @@ class ArtPieces::CLI
     painting.details.each.with_index(1) do |detail, idx|
       puts "#{idx}. #{detail}"
     end
+    get_user_art_piece(painting)
   end
   
   def user_status

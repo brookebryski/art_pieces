@@ -5,7 +5,7 @@ class ArtPieces::Painting
 
   def initialize(name)
     @name = name
-    @details = details
+    @details = []
     save
   end
   
@@ -15,7 +15,7 @@ class ArtPieces::Painting
   end
   
   def get_details
-    ArtPieces::Scraper.scrape_details if @details.empty?
+    ArtPieces::Scraper.scrape_details(self) if @details.empty?
   end
   
   def save

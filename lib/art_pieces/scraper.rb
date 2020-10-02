@@ -1,4 +1,5 @@
 class ArtPieces::Scraper
+  
   def self.scrape_paintings
     doc = Nokogiri::HTML(open("https://historylists.org/art/20-of-the-world%E2%80%99s-most-famous-art-pieces.html"))
     
@@ -11,17 +12,15 @@ class ArtPieces::Scraper
   end
   
   def self.scrape_details(painting)
-    ArtPieces::Detail.new("details", painting)
-    ArtPieces::Detail.new("details", painting)
+    url = "https://historylists.org/art/20-of-the-world%E2%80%99s-most-famous-art-pieces.html"
+    doc = Nokogiri::HTML(open(url))
+    
+    details = doc.css("body p")
+    
+    details.each do |p|
+      description = p.text
+      ArtPieces::Detail.new(description)
+    end
   end
 end
 
-=begin
-scrape details
-
-paintings = doc.css("body p")
-
-paintings.each do |p|
-  puts p.text
-end
-=end

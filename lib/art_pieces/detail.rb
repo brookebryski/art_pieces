@@ -1,11 +1,11 @@
 class ArtPieces::Detail
-  attr_accessor :name, :painting
+  attr_accessor :name, :painting, :url
   @@all = []
 
   def initialize(name, painting)
     @name = name
     @painting = painting
-    # notify painting about the detail
+    @url = url
     add_to_painting
     save
   end
@@ -17,6 +17,7 @@ class ArtPieces::Detail
   def add_to_painting
 @painting.details << self unless @painting.details.include? (self)
   end
+  
   
   def save
     @@all << self

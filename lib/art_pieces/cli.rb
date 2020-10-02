@@ -1,11 +1,15 @@
 class ArtPieces::CLI 
   def call
     puts "\nWelcome to your art lesson!\n"
+    @input = ""
+    until @input == "exit"
     get_art_pieces
     list_art_pieces
     get_user_art_piece
   end
-  
+  goodbye
+  end
+
   def get_art_pieces
     @paintings = ArtPieces::Painting.all
   end
@@ -34,4 +38,13 @@ class ArtPieces::CLI
       puts "#{idx}. #{detail}"
     end
   end
-end
+  
+  def user_status
+    puts "All finished? Type 'exit' or press any key to learn about more pieces."
+    @input = gets.strip
+  end
+  
+  def goodbye
+    puts "See you next time!"
+  end
+ end

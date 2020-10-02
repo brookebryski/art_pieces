@@ -10,12 +10,12 @@ class ArtPieces::Painting
   end
   
   def self.all
-    ArtPieces::Scraper.scrape_paintings(self) if @@all.empty?
+    ArtPieces::Scraper.scrape_paintings if @@all.empty?
     @@all
   end
   
   def get_details
-    ArtPieces::Scraper.scrape_details(self) if @details.empty?
+    ArtPieces::Scraper.scrape_details if @details.empty?
   end
   
   def save

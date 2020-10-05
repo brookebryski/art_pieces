@@ -9,7 +9,7 @@ class ArtPieces::Scraper
   paintings.each do |painting|
 name = painting.text.strip
 url = painting.css("a").attr("href").value
-ArtPieces::Painting.new(name)
+ArtPieces::Painting.new(name,url)
   end
 end
   
@@ -37,12 +37,13 @@ end
  # end
  
 
-def self.scrape_details(chosen_painting)
-  url = "https://www.brushwiz.com#{painting.url}
+def self.scrape_details(painting)
+  url = "https://www.brushwiz.com#{painting.url}"
   doc = Nokogiri::HTML(open(url))
   p = doc.css("div.product-block.large")
   p.each do |p|
    description = p.text.strip
    painting.details << description
   end
-  
+end
+end

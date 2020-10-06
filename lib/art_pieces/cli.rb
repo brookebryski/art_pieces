@@ -38,9 +38,6 @@ class ArtPieces::CLI
     puts "Here is some information for #{painting.name}"
     painting.details.each_with_index do |detail|
       puts "#{detail}" 
-      #The above is the mothod that I wrote that ends up returning all of the painting descriptions
-      #painting.details.find { |description| #description.include? "painting" }
-      #This is what I came up with to return the correct description for the chosen painting but it is not returning any description
     end
     
   end

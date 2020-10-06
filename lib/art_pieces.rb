@@ -10,5 +10,5 @@ require 'open-uri'
 
 module ArtPieces
   class Error < StandardError; end
-  # Your code goes here...
+  
 end
